@@ -1,0 +1,52 @@
+html {
+  font-size: 14px;
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
+  background-color: #444;
+}
+
+body{
+  background-color: #444;
+}
+
+.body-container{
+  background-color: #444;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column; 
+  margin: 0;
+  height: 100vh;
+}
+
+.input-container{
+  width: 60%;
+  margin: 30% auto;
+}
+
+h1, .lable-text{
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
+  color: white;
+}
+
+h1, .icon-container {
+  text-align: center;
+}
+
+.form-control{
+  outline: none;
+}
+
+.next-btn-conteiner{
+  text-align: right;
+}
+
+.credit-card {
+  width: 15%;
+}
+
+
+@keyframes App-logo-spin {
+  from { transform: skewY(0deg); }
+  to { transform: skewY(20deg); }
+}
