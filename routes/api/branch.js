@@ -13,9 +13,19 @@ router.get('/:Bank_Code/:Branch_Code', function(req, res) {
       currBranch = branch;
     }
   });
-  res.render('branch', { branch: currBranch});
-  //res.send(JSON.stringify(currBranch));
+  if(currBranch == null){
+    res.send('sorry, I could not find a branch that matches those details');
+  } else {
+    res.render('branch', { branch: currBranch});
+  }
 });
 
+router.get('/', function(req, res) {
+  res.send('sorry, you have to choose a bank and branch name');
+});
+
+router.get('/:bank_code', function(req, res) {
+  res.send('sorry, you should type the branch code too');
+});
 
 module.exports = router;

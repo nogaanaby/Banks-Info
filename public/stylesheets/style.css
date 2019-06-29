@@ -27,6 +27,7 @@ body{
 .card{
   width: 60%;
   margin: auto;
+  text-align: right;
 }
 
 .input-container{

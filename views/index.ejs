@@ -23,7 +23,6 @@
           <form action=<%= action %> method="post">
 
               <div class="form-group">
-                <label for="exampleFormControlSelect1" class="lable-text">Select Bank Name</label>
                 <select class="form-control" id="exampleFormControlSelect1" name="bankName">
                   <% for(var i=0; i < bankNames.length; i++) { %>
                     <% const bankName = bankNames[i].split(' ').join('') %>

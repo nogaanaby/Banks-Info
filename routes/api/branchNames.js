@@ -13,10 +13,11 @@ router.get('/:Bank_Code', function(req, res) {
     }
   });
   if(currentBranchesNames.length == 0){
-    currentBranchesNames[0] = "sorry, there's no bank with this bank code"
+    res.send('sorry, there is no bank that matches this code');
+  } else {
+    res.render('index', { action: `/bank/${bankCode}`, bankNames: currentBranchesNames});
   }
 
-  res.render('index', { action: `/bank/${bankCode}`, bankNames: currentBranchesNames});
 });
 
 router.post('/:Bank_Code', function(req, res, next) {

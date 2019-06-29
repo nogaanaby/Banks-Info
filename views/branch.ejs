@@ -13,25 +13,18 @@
   </head>
   <body>
     <div class="branch-container">
-        <div class="card">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="..." class="card-img" alt="...">
-              </div>
-              <div class="col-md-8">
+        <div class="card">              
                 <div class="card-body">
                   <h5 class="card-title"><%= branch.Branch_Name[0] %></h5>
                   <ul class="branch-list list-group">
-                    <% for(var i=0; i < Object.values(branch).length; i++) { %>
+                    <% for(var i=0; i < 13; i++) { %>
                       <li class="list-group-item">
-                          <b> <%= Object.keys(branch)[i] %> </b>
                           <%= Object.values(branch)[i] %>
+                          <b> : <%= Object.keys(branch)[i] %> </b>
                       </li>
                     <% } %>
                   </ul>
                 </div>
-              </div>
-            </div>
         </div>
     </div>
   </body>
