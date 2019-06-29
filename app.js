@@ -8,10 +8,11 @@ const parseString = require('xml2js').parseString;
 const fs = require('fs');
 const bodyParser = require('body-parser')
 
-const indexRouter = require('./routes');
-//const bankNamesRouter = require('./routes/api/bankNames');
-//const branchNamesRouter = require('./routes/api/branchNames');
-//const branchRouter = require('./routes/api/branch');
+
+//const indexRouter = require('./routes');
+const bankNamesRouter = require('./routes/api/bankNames');
+const branchNamesRouter = require('./routes/api/branchNames');
+const branchRouter = require('./routes/api/branch');
 
 const app = express();
 
@@ -27,10 +28,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-// app.use('/api/banks', bankNamesRouter);
-// app.use('/api/bank', branchNamesRouter);
-// app.use('/api/bank/branch', branchRouter);
+app.use('/', bankNamesRouter);
+app.use('/banks', bankNamesRouter);
+app.use('/bank', branchNamesRouter);
+app.use('/branch', branchRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -49,10 +50,8 @@ app.use(function(err, req, res, next) {
 });
 
 
-
-
-
-const url = 'https://www.boi.org.il/he/BankingSupervision/BanksAndBranchLocations/Lists/BoiBankBranchesDocs/snifim_dnld_he.xml';
+function getData(){
+  const url = 'https://www.boi.org.il/he/BankingSupervision/BanksAndBranchLocations/Lists/BoiBankBranchesDocs/snifim_dnld_he.xml';
 
 //faches the xml and save the data
 const req = http.get(url, function(res) {
@@ -73,5 +72,9 @@ const req = http.get(url, function(res) {
 req.on('error', function(err) {
   console.log(err)
 });
+}
+
+
+
 
 module.exports = app;

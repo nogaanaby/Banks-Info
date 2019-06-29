@@ -19,6 +19,16 @@ body{
   height: 100vh;
 }
 
+.branch-container{
+  background-color: #444;
+  padding: 4em;
+}
+
+.card{
+  width: 60%;
+  margin: auto;
+}
+
 .input-container{
   width: 60%;
   margin: 30% auto;
@@ -49,4 +59,8 @@ h1, .icon-container {
 @keyframes App-logo-spin {
   from { transform: skewY(0deg); }
   to { transform: skewY(20deg); }
+}
+
+.branch-list{
+  list-style-type: none;
 }
