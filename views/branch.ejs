@@ -17,7 +17,8 @@
                 <div class="card-body">
                   <h5 class="card-title"><%= branch.Branch_Name[0] %></h5>
                   <ul class="branch-list list-group">
-                    <% for(var i=0; i < 13; i++) { %>
+                    <% const length = Math.min(13,Object.values(branch).length) %>
+                    <% for(var i=0; i < length; i++) { %>
                       <li class="list-group-item">
                           <%= Object.values(branch)[i] %>
                           <b> : <%= Object.keys(branch)[i] %> </b>
